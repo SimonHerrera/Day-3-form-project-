@@ -4,84 +4,88 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Banking Form</title>
-	<link rel="stylesheet" href="">
+	<link href="css/validation.css" rel="stylesheet" type="text/css">
 </head>
 	<header id="page_header" class="">
 		<h3>NSS BANK - LOAN APPLICATION</h3>
 	</header><!-- /header -->
-	<article>
-		<fieldset>
-			<legend>Personal Information</legend>
-			<label for="first-name">First Name:</label>
-			<input type="text" id="first-name" placeholder="First Name"autofocus></input>
-			<label for="middle-initial">Middle Initial:</label>
-			<input type="text" id="middle-initial" placeholder="middle-initial" ></input>
+  <!-- Must add form to use REQUIRED feature -->
+  <form action="demo_form.asp">
+  	<article>
+  		<fieldset>
+  			<legend>Personal Information</legend>
+  			<label for="first-name">First Name:</label>
+  			<input type="text" required id="first-name" placeholder="First Name"autofocus required></input>
+  			<label for="middle-initial">Middle Initial:</label>
+  			<input type="text" id="middle-initial" placeholder="middle-initial" required></input>
 
-			<label for="last-name">Last Name:</label>
-			<input type="text" id="last-name" placeholder="Last Name" ></input>
-			<br>
-			<label for="home-address">Address:</label>
-			<br>
-			<textarea name="home-address" rows="7" cols="80" placeholder="Ener Home Address Here"></textarea>
-			<br>
-			<label for="occupation">Occupation:<label>
-			<input type="text" id="occupation" placeholder="What do you do for work?"></input>
-			<br>
-			<label for="employer">Employer:<label>
-			<input type="text" id="employer" placeholder="Where do you work?"></input>
-			<br>
+  			<label for="last-name">Last Name:</label>
+  			<input type="text" id="last-name" placeholder="Last Name" required></input>
+  			<br>
+  			<label for="home-address">Address:</label>
+  			<br>
+  			<textarea name="home-address" rows="7" cols="80" placeholder="Ener Home Address Here" required></textarea>
+  			<br>
+  			<label for="occupation">Occupation:<label>
+  			<input type="text" id="occupation" placeholder="What do you do for work?" required></input>
+  			<br>
+  			<label for="employer">Employer:<label>
+  			<input type="text" id="employer" placeholder="Where do you work?" required></input>
+  			<br>
 
-		</fieldset>
+  		</fieldset>
 
-		<fieldset>
-			<legend>Loan Information:</legend>
-			<label for="loans">Select Loan Type</label>
-			<input name="loans" list="loan-types">
-			<datalist id="loan-types">
-				<option value="Commercial">
-				<option value="Real estate">
-				<option value="Personal">
-				<option value="Mortgage">
-			</datalist>
-			<br>
+  		<fieldset>
+  			<!-- <legend>Loan Information:</legend> -->
+        <select >
+          <option disabled="disabled" selected="selected">Select Loan Type</option>
+          <optgroup id="loan-type">
+      			<option>Commercial</option>
+      			<option>Real estate</option>
+      			<option>Personal</option>
+      			<option>Mortgage</option>
+          </optgroup>
+        </select>
+  			<br>
 
-			<br>
-			<label for="amount">Requested Amount:<label>
-			<input type="text" id="amount" placeholder="Amount Needed"></input>
-			<br>
+  			<br>
+  			<label for="amount">Requested Amount:<label>
+  			<input type="text" id="amount" placeholder="Amount Needed" required></input>
+  			<br>
 
-			<legend>Loan Terms:</legend>
-			<input type="radio" name="loan-length" value="10 Years">10 Years
-			<input type="radio" name="loan-length" value="15 Years">15 Years
-			<input type="radio" name="loan-length" value="30 Years">30 Years
-		</fieldset>
+  			<legend>Loan Terms:</legend>
+  			<input type="radio" name="loan-length" value="10 Years">10 Years
+  			<input type="radio" name="loan-length" value="15 Years">15 Years
+  			<input type="radio" name="loan-length" value="30 Years">30 Years
+  		</fieldset>
 
-		<fieldset>
-			<legend>Special Conditions:</legend>
-			<input type="checkbox" name="downpayment" value="downpayment">Downpayment
-			<input type="checkbox" name="out-of-state" value="out-of-state">Out of State
-			<input type="checkbox" name="married" value="married">Married
-			<input type="checkbox" name="co-sign" value="co-sign">Loan will be co-signed
-			<br>
-			<legend>Comments:</legend>
-			<textarea name="comments" rows="5" cols="80" placeholder="Additional Comments"></textarea>
-			<br>
-		</fieldset>
+  		<fieldset>
+  			<legend>Special Conditions:</legend>
+  			<input type="checkbox" name="downpayment" value="downpayment">Downpayment
+  			<input type="checkbox" name="out-of-state" value="out-of-state">Out of State
+  			<input type="checkbox" name="married" value="married">Married
+  			<input type="checkbox" name="co-sign" value="co-sign">Loan will be co-signed
+  			<br>
+  			<legend>Comments:</legend>
+  			<textarea name="comments" rows="5" cols="80" placeholder="Additional Comments" required></textarea>
+  			<br>
+  		</fieldset>
 
-		<fieldset>
-			<legend>Additional Information:</legend>
-			<label for="email">Enter Email:<label>
-			<input type="email" id="email" placeholder="enter@email.com"><br>
-			<label for="phone-number">Enter Phone Number</label>
-			<input type="tel" id="phone-number" placeholder="555-555-5555"><br>
-			<label for="linkedin-url">Enter Linkedin URL</label>
-			<input type="ulr" id="linkedin-url" placeholder="Web Link Here"><br>
-		</fieldset>
-		<br>
-		<button type="button">Click to Submit and Apply</button>
-		<br>
-		<br>
-	</article>
+  		<fieldset>
+  			<legend>Additional Information:</legend>
+  			<label for="email">Enter Email:<label>
+  			<input type="email" id="email" placeholder="enter@email.com" required=""><br>
+  			<label for="phone-number">Enter Phone Number</label>
+  			<input type="tel" pattern='\d{3}[\-]\d{3}[\-]\d{4}' id="phone-number" placeholder="555-555-5555" required><br>
+  			<label for="linkedin-url">Enter Linkedin URL</label>
+  			<input type="url" pattern"[\http]*[\.com]" id="linkedin-url" placeholder="Web Link Here" required><br>
+  		</fieldset>
+  		<br>
+  		<button type="submit">Click to Submit and Apply</button>
+  		<br>
+  		<br>
+  	</article>
+  </form>
 
 <body>
 

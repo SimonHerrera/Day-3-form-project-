@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+input:invalid {
+	box-shadow: 0 0 5px 1px red;
+}
+
+input:valid {
+	box-shadow: 0 0 5px 1px green;
+}
